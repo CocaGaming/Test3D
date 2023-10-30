@@ -8,6 +8,7 @@ public class CollisionDetection : MonoBehaviour
     //Culling Mask: render những gì layer nào camera muốn thấy, ví dụ giữa Player và Cây có vật chắn, bỏ layer vật chắn ra Culling Mask
 
 {
+    public float radius;
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("OnTriggerEnter: " + other.name);
