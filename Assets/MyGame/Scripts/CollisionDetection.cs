@@ -10,6 +10,7 @@ public class CollisionDetection : MonoBehaviour
 {
     public float radius;
     public int age;
+    public string name;
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("OnTriggerEnter: " + other.name);
