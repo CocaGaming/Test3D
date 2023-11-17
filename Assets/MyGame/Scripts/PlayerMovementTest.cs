@@ -67,11 +67,11 @@ public class PlayerMovementTest : MonoBehaviour
         //yForce là trọng lực của nv
         float gravity = Physics.gravity.y * gravityMultiplier;
 
-        if(isJumping && yForce>0 && Input.GetButton("Jump")== false)
+        if(isJumping && yForce>0 && Input.GetButton("Jump")== false)//giữ nút nhảy càng lâu bay càng cao
         {
             gravity *= 2;
         }
-        yForce += gravity * Time.deltaTime;//physics.gravity.y=-1.0f, += để nv khi nhảy lên sẽ rơi xuống lại từ từ, ko bị giật hẳn xuống
+        yForce += gravity * Time.deltaTime;//physics.gravity.y=-9.81f, += để nv khi nhảy lên sẽ rơi xuống lại từ từ, ko bị giật hẳn xuống
 
         if(characterController.isGrounded)
         {
@@ -97,7 +97,7 @@ public class PlayerMovementTest : MonoBehaviour
             playerAnim.SetBool("IsFalling", false);
             if (Time.time-jumpButtonPressTime<= jumpButtonGracePeriod)//khi bấm nút cách
             {
-                yForce = Mathf.Sqrt(jumpSpeed* -3.0f * gravity);
+                yForce = Mathf.Sqrt(jumpForce* -3.0f * gravity);
 
                 playerAnim.SetBool("IsJumping", true);
                 isJumping = true;
@@ -113,7 +113,7 @@ public class PlayerMovementTest : MonoBehaviour
             playerAnim.SetBool("IsGrounded", false);
             isGrounded = false;
 
-            if((isJumping && yForce < 0) || yForce<-3)//Nhảy lên và đang rớt xuống || đang đi mà lọt hố, số -3 mà lớn quá thì sẽ bị nhầm với đi xuống bậc cầu thang= falling
+            if((isJumping && yForce < 0) || yForce<-3)//Nhảy lên và đang rớt xuống || đang đi mà lọt hố, số -3 mà âm bé quá thì sẽ bị nhầm với đi xuống bậc cầu thang= falling
             {
                 playerAnim.SetBool("IsFalling", true);
             }
