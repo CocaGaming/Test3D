@@ -10,9 +10,14 @@ public class HealthController : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    [SerializeField]
+    [Range(0,1)]
+    private float maximumInjuredLayerWeight;//giá trị injured weight tối đa
+
     private float maxHealth = 100;
     private float curHealth;
     private int injuredLayerIndex;
+    private float layerWeightVelocity;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,5 +43,12 @@ public class HealthController : MonoBehaviour
 
         float healthPercentage=curHealth/maxHealth;//phần trăm máu
         healthText.text = $"HP: {healthPercentage * 100}%";
+
+        float currentInjuredLayerWeight=animator.GetLayerWeight(injuredLayerIndex);//lấy chỉ số weight hiện tại trong layer
+        float targetInjuredLayerWeight=(1- healthPercentage)*maximumInjuredLayerWeight;
+        animator.SetLayerWeight(injuredLayerIndex, Mathf.SmoothDamp(currentInjuredLayerWeight,//hàm SmoothDamp để thay đổi mượt mà giữa 2 giá trị trong 1 khoảng tgian
+                                                   targetInjuredLayerWeight,//ví dụ từ weight 0 lên 0.1
+                                                   ref layerWeightVelocity,
+                                                   0.2f));//giảm 10% máu thì tăng 0.1 weight
     }
 }

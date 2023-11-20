@@ -136,8 +136,8 @@ ModelImporter:
     - boneName: mixamorig:RightUpLeg
       humanName: RightUpperLeg
       limit:
-        min: {x: -60, y: -20, z: -90}
-        max: {x: 60, y: 20, z: 50}
+        min: {x: -60, y: -10, z: -90}
+        max: {x: 60, y: 10, z: 50}
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 1

@@ -178,11 +178,15 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 4c196e6e58d44e04bbb449767605e673, type: 3}
       propertyPath: m_Avatar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9000000, guid: 4c196e6e58d44e04bbb449767605e673, type: 3}
     - target: {fileID: 5866666021909216657, guid: 4c196e6e58d44e04bbb449767605e673, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 9a52a7c2baab2554486d53b88a3e77a0, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 4c196e6e58d44e04bbb449767605e673, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -517,6 +521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthText: {fileID: 1751009961}
   animator: {fileID: 0}
+  maximumInjuredLayerWeight: 0.6
 --- !u!1 &1751009959
 GameObject:
   m_ObjectHideFlags: 0
