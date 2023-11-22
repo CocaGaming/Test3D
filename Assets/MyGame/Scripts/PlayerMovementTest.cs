@@ -145,10 +145,10 @@ public class PlayerMovementTest : MonoBehaviour
     {
         if (isGrounded)
         {
-            Vector3 velocity = playerAnim.deltaPosition;//trong Update mode (Animator) normal đã nhân sẵn time.deltatime
+            Vector3 velocity = playerAnim.deltaPosition * moveSpeed;//trong Update mode (Animator) normal đã nhân sẵn time.deltatime
             velocity.y = yForce * Time.deltaTime;//phải nhân time.deltatime để đồng bộ với velocity
 
-            characterController.Move(velocity * moveSpeed);
+            characterController.Move(velocity);
         } 
     }
 }

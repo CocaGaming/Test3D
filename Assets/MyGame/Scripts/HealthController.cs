@@ -12,7 +12,7 @@ public class HealthController : MonoBehaviour
 
     [SerializeField]
     [Range(0,1)]
-    private float maximumInjuredLayerWeight;//giá trị injured weight tối đa
+    private float maximumInjuredLayerWeight;//giá trị injured weight tối đa có thể đạt dc
 
     private float maxHealth = 100;
     private float curHealth;
