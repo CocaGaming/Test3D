@@ -67,7 +67,7 @@ public class PlayerMovementTest : MonoBehaviour
         //yForce là trọng lực của nv
         float gravity = Physics.gravity.y * gravityMultiplier;
 
-        if(isJumping && yForce>0 && Input.GetButton("Jump")== false)//giữ nút nhảy càng lâu bay càng cao
+        if(isJumping && yForce>0 && Input.GetButton("Jump")== false)//giữ nút nhảy càng lâu bay càng cao, buông nút nhảy lúc đang bay thì rơi xuống lại
         {
             gravity *= 2;
         }
@@ -135,7 +135,7 @@ public class PlayerMovementTest : MonoBehaviour
 
         if(!isGrounded)
         {
-            Vector3 velocity =inputMagnitude* jumpSpeed* movementDirection;
+            Vector3 velocity =inputMagnitude* jumpSpeed* movementDirection;//di chuyển khi đang bay
             velocity.y = yForce;
 
             characterController.Move(velocity * Time.deltaTime);//vì là trong hàm update nên *Time.deltaTime
