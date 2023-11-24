@@ -298,7 +298,7 @@ CharacterJoint:
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 29.12307
+    limit: 24.552486
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
@@ -553,7 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 2141132887}
-  zombieMaterial: {fileID: 13400000, guid: 814653dee41a7a14487cd092d6942dc8, type: 2}
+  zombiePhysicMaterial: {fileID: 0}
 --- !u!143 &459433809
 CharacterController:
   m_ObjectHideFlags: 0
