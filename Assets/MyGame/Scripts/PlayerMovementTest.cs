@@ -149,6 +149,6 @@ public class PlayerMovementTest : MonoBehaviour
             velocity.y = yForce * Time.deltaTime;//phải nhân time.deltatime để đồng bộ với velocity
 
             characterController.Move(velocity);
-        } 
+        }   
     }
 }
