@@ -6,14 +6,14 @@ using UnityEngine;
 public class ListenerGroup
 {
   List<Action<object>> actions= new List<Action<object>>();
-  public void BroadCast(object value)//dùng cho object bắn ra sự kiện
+  public void BroadCast(object value)//hàm bắn ra sự kiện
     {
         for(int i=0;i<actions.Count; i++)
         {
             actions[i](value);
         }
     }
-    public void Attach(Action<object> action)//dùng cho object lắng nghe sự kiện, thêm vào
+    public void Attach(Action<object> action)//thêm vào sự kiện
     {
         for(int i=0; i<actions.Count; i++)
         {
@@ -22,7 +22,7 @@ public class ListenerGroup
         }
         actions.Add(action);
     }
-    public void Detach(Action<object> action)//dùng cho object không có trong sự kiện, remove ra
+    public void Detach(Action<object> action)//remove ra khỏi sự kiện 
     {
         for(int i=0;i<actions.Count ; i++)
         {

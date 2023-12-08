@@ -26,7 +26,7 @@ public class ListenerManager: BaseManager<ListenerManager>
     }
     public void Unregister(ListenType type, Action<object> action)
     {
-        if(listeners.ContainsKey(type) && listeners[type] != null)//listeners[type] !=null nghĩa là đang có object lắng nghe sự kiện đ
+        if(listeners.ContainsKey(type) && listeners[type] != null)//listeners[type] !=null nghĩa là đang có object lắng nghe sự kiện đó
         {
             listeners[type].Detach(action);
         }

@@ -20,7 +20,7 @@ public class GamePanel : MonoBehaviour
         }
     }
 
-    private void OnDestroy()//bỏ sự kiện 
+    private void OnDestroy()//bỏ sự kiện để giải phóng bộ nhớ
     {
         if (ListenerManager.HasInstance)
         {
