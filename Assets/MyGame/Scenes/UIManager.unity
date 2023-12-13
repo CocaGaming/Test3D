@@ -332,6 +332,10 @@ MonoBehaviour:
   cPopup: {fileID: 1585904483}
   cNotify: {fileID: 454982572}
   cOverlap: {fileID: 423336065}
+  gContainer: {fileID: 168385717}
+  gWrapper: {fileID: 1218749566}
+  MyCanvas: {fileID: 147437973}
+  MyEventSystem: {fileID: 1720765256}
 --- !u!4 &308652450
 Transform:
   m_ObjectHideFlags: 0
