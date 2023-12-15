@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class BaseUIElement : MonoBehaviour
 {
-    public RectTransform rtWrapper;
-
     protected CanvasGroup canvasGroup;
     protected UIType uiType = UIType.UNKNOWN;
     protected bool isHide;
