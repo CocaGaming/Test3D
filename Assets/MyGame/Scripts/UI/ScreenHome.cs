@@ -25,8 +25,10 @@ public class ScreenHome : BaseScreen
     }
     public void OnClickStartButton()
     {
+        if(UIManager.HasInstance)
+        {
+            UIManager.Instance.ShowNotify<NotifyLoadingGame>();
+        }
        Hide();
-       //hiện notifyloading game
-       //fade overlap tầm 1s rồi hiện UI scene game
     }
 }
