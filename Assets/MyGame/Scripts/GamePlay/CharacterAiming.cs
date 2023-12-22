@@ -11,14 +11,14 @@ public class CharacterAiming : MonoBehaviour
     void Start()
     {
         mainCamera=Camera.main;
-        Cursor.visible = false; //ẩn chuột
+        Cursor.visible = false; //ẩn chuột khi play 
         Cursor.lockState= CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        float yawCamera=mainCamera.transform.rotation.eulerAngles.y; //góc Y
+        float yawCamera=mainCamera.transform.rotation.eulerAngles.y; //xoay quanh trục Y
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0), turnSpeed * Time.fixedDeltaTime);//thay đổi góc nhìn camera theo trục Y khi nv xoay
     }
 }
