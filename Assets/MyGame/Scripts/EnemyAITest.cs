@@ -12,7 +12,7 @@ public class EnemyAITest : MonoBehaviour
     private void Awake()
     {
         playerTF = GameObject.FindGameObjectWithTag("Player").transform;
-        navMeshAgent=GetComponent<NavMeshAgent>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
