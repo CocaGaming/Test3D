@@ -10,12 +10,14 @@ public class CharacterAiming : MonoBehaviour
     public float turnSpeed = 15f;
     public float aimDuration = 0.3f;
     private Camera mainCamera;
+    private RaycastWeapon raycastWeapon;
     // Start is called before the first frame update
     void Start()
     {
         mainCamera=Camera.main;
         Cursor.visible = false; //ẩn chuột khi play 
         Cursor.lockState= CursorLockMode.Locked;
+        raycastWeapon=GetComponentInChildren<RaycastWeapon>();
     }
     private void Update()
     {
@@ -26,6 +28,15 @@ public class CharacterAiming : MonoBehaviour
         else
         {
             aimLayer.weight -= Time.deltaTime / aimDuration;
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            raycastWeapon.StartFiring();
+        }
+        if (Input.GetButtonUp("Fire1"))//khi nhả chuột ra
+        {
+            raycastWeapon.StopFiring();
         }
     }
     // Update is called once per frame
